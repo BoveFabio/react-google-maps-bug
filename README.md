@@ -1,5 +1,20 @@
 # Getting Started with Create React App
 
+This repo is for reproducing a bug in @react-google-maps/api, supposedly introduced after 2.8.1.
+
+Steps to reproduce 
+1. `npm install`
+2. `npm start`
+3. open dev tools
+4. click on polygon outside of info box and observe the log (only polygon click handler, correct)
+5. click on info box outside of polygon and observe the log (only info box click handler, correct)
+6. click on info box outside inside polygon and observe the log (both click handlers with polygon triggering first, unexpected + supposedly incorrect)
+
+Follow the same steps with version 2.8.1 of @react-google-maps/api installed and handling of the click event is correct:
+Click on info box inside polygon triggers only click handler of info box.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
